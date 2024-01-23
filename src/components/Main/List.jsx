@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
 	Avatar,
 	IconButton,
@@ -10,8 +10,11 @@ import {
 	Slide,
 } from "@mui/material";
 import { Delete, MoneyOff } from "@mui/icons-material";
+import { ExpenseTrackerContext } from "../../context/context";
 
 const List = () => {
+	const { appName } = useContext(ExpenseTrackerContext);
+
 	const transactions = [
 		{
 			id: 1,
