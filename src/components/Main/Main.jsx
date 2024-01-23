@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Form from "./Form";
+import List from "./List";
 
 const Main = () => {
 	return (
@@ -29,7 +30,7 @@ const Main = () => {
 			<CardContent style={{ paddingTop: 0 }}>
 				<Grid container spacing={2}>
 					<Grid item xs={12}>
-						Luffy
+						<List />
 					</Grid>
 				</Grid>
 			</CardContent>
