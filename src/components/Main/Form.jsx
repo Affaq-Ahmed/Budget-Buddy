@@ -16,6 +16,7 @@ import {
 	expenseCategories,
 } from "../../constants/categories";
 import { formatDate } from "../../utils/formatDate";
+import CustomizedSnackBar from "../Snackbar/Snackbar";
 
 const initialState = {
 	amount: "",
@@ -26,6 +27,7 @@ const initialState = {
 
 const Form = () => {
 	const [formData, setFormData] = useState(initialState);
+	const [open, setOpen] = useState(false);
 	const { addTransaction } = useContext(ExpenseTrackerContext);
 
 	const createTransaction = () => {
@@ -37,6 +39,7 @@ const Form = () => {
 		console.log(transaction);
 		addTransaction(transaction);
 		setFormData(initialState);
+		setOpen(true);
 	};
 
 	const selectedCategories =
@@ -44,6 +47,7 @@ const Form = () => {
 
 	return (
 		<Grid container spacing={2} style={{ marginBlockEnd: "-10px" }}>
+			<CustomizedSnackBar open={open} setOpen={setOpen} />
 			<Grid item xs={12}>
 				<Typography variant="subtitle2" align="center" gutterBottom>
 					...
