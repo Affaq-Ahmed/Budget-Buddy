@@ -6,23 +6,24 @@ import {
 	Grid,
 	Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import Form from "./Form";
 import List from "./List";
+import { ExpenseTrackerContext } from "../../context/context";
 
 const Main = () => {
+	const { balance } = useContext(ExpenseTrackerContext);
+
 	return (
 		<Card>
-			<CardHeader title="Budget Buddy" subheader="Built by Affaq" />
+			<CardHeader
+				title="Budget Buddy"
+				subheader="Built by Affaq"
+				style={{ textAlign: "center" }}
+			/>
 			<CardContent>
 				<Typography alignItems="center" variant="h5">
-					Total Balance: PKR 150000
-				</Typography>
-				<Typography
-					variant="subtitle1"
-					style={{ lineHeight: "1.5rem", marginTop: "20px" }}
-				>
-					Zoro
+					Total Balance: PKR {balance}
 				</Typography>
 				<Divider style={{ margin: "20px 0" }} />
 				<Form />
