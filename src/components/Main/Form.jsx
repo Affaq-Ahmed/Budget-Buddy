@@ -31,6 +31,18 @@ const Form = () => {
 	const { addTransaction } = useContext(ExpenseTrackerContext);
 
 	const createTransaction = () => {
+		if (
+			Number.isNaN(Number(formData.amount)) ||
+			!formData.date.includes("-") ||
+			!formData.amount ||
+			!formData.category
+		)
+			return;
+		if (
+			!incomeCategories.map((iC) => iC.type).includes(formData.category) &&
+			!expenseCategories.map((iC) => iC.type).includes(formData.category)
+		)
+			return;
 		const transaction = {
 			...formData,
 			amount: Number(formData.amount),
