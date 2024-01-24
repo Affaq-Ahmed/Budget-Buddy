@@ -16,7 +16,7 @@ const Main = () => {
 			<CardHeader title="Budget Buddy" subheader="Built by Affaq" />
 			<CardContent>
 				<Typography alignItems="center" variant="h5">
-					Total Balance:  PKR 150000
+					Total Balance: PKR 150000
 				</Typography>
 				<Typography
 					variant="subtitle1"
