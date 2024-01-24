@@ -10,6 +10,7 @@ import { useContext } from "react";
 export const useTransactions = (title) => {
 	resetCategories();
 	const { transactions } = useContext(ExpenseTrackerContext);
+  console.log({transactions});
 	const transactionsPerType = transactions.filter((t) => t.type === title);
 	const total = transactionsPerType.reduce(
 		(acc, currVal) => (acc += currVal.amount),
@@ -35,4 +36,6 @@ export const useTransactions = (title) => {
 		],
 		labels: filteredCategories.map((c) => c.type),
 	};
+
+	return { total, chartData };
 };
