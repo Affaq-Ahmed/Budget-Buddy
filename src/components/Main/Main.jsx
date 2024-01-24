@@ -16,7 +16,11 @@ const Main = () => {
 
 	return (
 		<Card>
-			<CardHeader title="Budget Buddy" subheader="Built by Affaq" />
+			<CardHeader
+				title="Budget Buddy"
+				subheader="Built by Affaq"
+				style={{ textAlign: "center" }}
+			/>
 			<CardContent>
 				<Typography alignItems="center" variant="h5">
 					Total Balance: PKR {balance}
