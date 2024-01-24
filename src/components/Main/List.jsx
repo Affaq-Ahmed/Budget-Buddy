@@ -13,31 +13,7 @@ import { Delete, MoneyOff } from "@mui/icons-material";
 import { ExpenseTrackerContext } from "../../context/context";
 
 const List = () => {
-	const { deleteTransaction } = useContext(ExpenseTrackerContext);
-
-	const transactions = [
-		{
-			id: 1,
-			type: "Income",
-			category: "Salary",
-			amount: 50,
-			date: "Wednesday",
-		},
-		{
-			id: 2,
-			type: "Expense",
-			category: "Nimko",
-			amount: 10,
-			date: "Wednesday",
-		},
-		{
-			id: 3,
-			type: "Expense",
-			category: "Noodles",
-			amount: 40,
-			date: "Thursday",
-		},
-	];
+	const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
 
 	return (
 		<MUIList
