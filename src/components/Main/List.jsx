@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 import {
 	Avatar,
 	IconButton,
@@ -8,24 +8,26 @@ import {
 	ListItemText,
 	List as MUIList,
 	Slide,
-} from "@mui/material";
-import { Delete, MoneyOff } from "@mui/icons-material";
-import { ExpenseTrackerContext } from "../../context/context";
+} from '@mui/material';
+import { Delete, MoneyOff } from '@mui/icons-material';
+import { ExpenseTrackerContext } from '../../context/context';
 
 const List = () => {
-	const { deleteTransaction, transactions } = useContext(ExpenseTrackerContext);
+	const { deleteTransaction, transactions } = useContext(
+		ExpenseTrackerContext
+	);
 
 	return (
 		<MUIList
 			dense
 			style={{
-				maxHeight: "150px",
-				overflow: "auto",
+				maxHeight: '150px',
+				overflow: 'auto',
 			}}
 		>
 			{transactions.map((transaction) => (
 				<Slide
-					direction="down"
+					direction='down'
 					in
 					mountOnEnter
 					unmountOnExit
@@ -35,9 +37,15 @@ const List = () => {
 						<ListItemAvatar>
 							<Avatar
 								style={{
-									color: `${transaction.type === "Income" ? "#fff" : "#eee"}`,
+									color: `${
+										transaction.type === 'Income'
+											? '#fff'
+											: '#eee'
+									}`,
 									backgroundColor: `${
-										transaction.type === "Income" ? "green" : "red"
+										transaction.type === 'Income'
+											? 'green'
+											: 'red'
 									}`,
 								}}
 							>
@@ -45,13 +53,13 @@ const List = () => {
 							</Avatar>
 						</ListItemAvatar>
 						<ListItemText
-							primary={transaction.category}
+							primary={`${transaction.category} - ${transaction.itemName}`}
 							secondary={`PKR ${transaction.amount} - ${transaction.date} `}
 						/>
 						<ListItemSecondaryAction>
 							<IconButton
-								edge="end"
-								aria-label="delete"
+								edge='end'
+								aria-label='delete'
 								onClick={() => {
 									deleteTransaction(transaction.id);
 								}}
